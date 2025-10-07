@@ -4,6 +4,7 @@ class film{
     private string $nomFilm;
     private int $nbEntrees;
     private realisateur $sonRealisateur;
+    private array $lesActeurs = [];
     
     public function __construct(int $idFilm, string $nomFilm, int $nbEntrees, realisateur $sonRealisateur)
     {
