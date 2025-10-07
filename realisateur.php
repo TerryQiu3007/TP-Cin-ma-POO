@@ -12,9 +12,8 @@ class realisateur extends film{
     {
        return $this->nomRealisateur;
     }
-
     public function getPrenomRealisateur():string
     {
-       return $this->prenomRealisateur;
+        return $this->PrenomRealisateur;
     }
 }
