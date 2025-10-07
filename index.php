@@ -31,19 +31,28 @@ $film_f2 = new film(2,"Boite Noire",432789, $real2);
 $film_f3 = new film(3,"The Batman",879214, $real3);
 $listFilms = [$film_f1, $film_f2, $film_f3];
 
-echo "3___________________________________________________________________________________\n";
+echo "(3)___________________________________________________________________________________\n";
 echo "Modifier du nombre d’entrées==> " . $film_f1->getIdFilm() . " - " . $film_f1->getNomFilm() . " - " . $film_f1->getNbEntrees() . "\n";
-echo "4___________________________________________________________________________________\n";
+echo "(4)___________________________________________________________________________________\n";
 foreach ($listFilms as $film) {
     echo "Infos sur le film ==> \n" . $film->getIdFilm() . " - " . $film->getNomFilm() . " - " . $film->getNbEntrees() . "\n";
 }
-echo "6___________________________________________________________________________________\n";
-foreach ($listFilms as $film) {
-    foreach ($listReali as $reali) {
-    echo "Infos sur le film ==> \n" . $film->getIdFilm() . " - " . $film->getNomFilm() . " - " . $film->getNbEntrees() . 
-    " - " . $reali->getNomRealisateur() . " - " . $reali->getPrenomRealisateur() . "\n";
+echo "(6)___________________________________________________________________________________\n";
+for ($i = 0; $i < 3; $i++)
+{
+    echo "Infos sur le film ==> \n" . $listFilms[$i]->getIdFilm() . " - " . $listFilms[$i]->getNomFilm() . " - " . $listFilms[$i]->getNbEntrees() . 
+    " - " . $listReali[$i]->getNomRealisateur() . " - " . $listReali[$i]->getPrenomRealisateur() . "\n";
+}
+echo "(7)___________________________________________________________________________________\n";
+for ($i = 0; $i < 3; $i++)
+{
+    echo "Infos sur le film ==> \n" . $listFilms[$i]->getIdFilm() . " - " . $listFilms[$i]->getNomFilm() . " - " . $listFilms[$i]->getNbEntrees() . 
+    " - " . $listReali[$i]->getNomRealisateur() . " - " . $listReali[$i]->getPrenomRealisateur() . "\nListe des acteurs==> \n";
+    for($init = 0; $init < 3; $init++)
+    {
+    echo $listActeurTotal[$i][0]->getNomActeur() . " - " . $listActeurTotal[$i][0]->getPrenomActeur() . " - " . $listActeurTotal[$i][0]->getEstCesaree() . "\n";
     }
 }
-echo "7___________________________________________________________________________________\n";
+    
 
 
