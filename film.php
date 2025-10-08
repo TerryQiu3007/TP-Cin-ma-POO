@@ -6,19 +6,15 @@ class film{
     private realisateur $sonRealisateur;
     private array $lesActeurs = [];
     
-    public function __construct(int $idFilm, string $nomFilm, int $nbEntrees, Realisateur $realisateur, array $acteurs)
+    public function __construct(int $idFilm, string $nomFilm, int $nbEntrees, realisateur $sonRealisateur)
     {
         $this->idFilm = $idFilm;
         $this->nomFilm = $nomFilm;
-        $this->nbEntrees = $nbEntrees;
-        $this->realisateur = $realisateur;
-        $this->acteurs = $acteurs;
+        $this->nbEntrees = $nbEntrees; 
+        $this->sonRealisateur = $sonRealisateur; 
+        $this->lesActeurs= $lesActeurs;
     }
 
-    public function getActeurs(): array
-    {
-        return $this->acteurs;
-    }
     public function getIdFilm(): int
     {
         return $this->idFilm;
