@@ -50,7 +50,14 @@ for ($i = 0; $i < 3; $i++)
     " - " . $listReali[$i]->getNomRealisateur() . " - " . $listReali[$i]->getPrenomRealisateur() . "\nListe des acteurs==> \n";
     for($init = 0; $init < 3; $init++)
     {
-    echo $listActeurTotal[$i][0]->getNomActeur() . " - " . $listActeurTotal[$i][0]->getPrenomActeur() . " - " . $listActeurTotal[$i][0]->getEstCesaree() . "\n";
+    echo $listActeurTotal[$i][$init]->getNomActeur() . " - " . $listActeurTotal[$i][$init]->getPrenomActeur() . " - ";
+    if($listActeurTotal[$i][$init]->getEstCesaree()== true)
+    {
+        echo "true";
+    }else{
+        echo "false";
+    }
+    echo "\n";
     }
 }
     
