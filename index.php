@@ -27,17 +27,35 @@ $listFilms = [$film_f1, $film_f2, $film_f3];
 echo "(3)___________________________________________________________________________________\n";
 echo "Modifier du nombre d’entrées==> " . $film_f1->getIdFilm() . " - " . $film_f1->getNomFilm() . " - " . $film_f1->getNbEntrees() . "\n";
 echo "(4)___________________________________________________________________________________\n";
+/**for ($i = 0; $i < count($listFilms); $i++) {
+    echo "Infos sur le film ==> \n"
+        . $listFilms[$i]->getIdFilm() . " - "
+        . $listFilms[$i]->getNomFilm() . " - "
+        . $listFilms[$i]->getNbEntrees() . "\n";
+}
+ */
 foreach ($listFilms as $film) {
     echo "Infos sur le film ==> \n" . $film->getIdFilm() . " - " . $film->getNomFilm() . " - " . $film->getNbEntrees() . "\n";
 }
 echo "(6)___________________________________________________________________________________\n";
-for ($i = 0; $i < 3; $i++)
+/**for ($i = 0; $i < 3; $i++)
 {
     echo "Infos sur le film ==> \n" . $listFilms[$i]->getIdFilm() . " - " . $listFilms[$i]->getNomFilm() . " - " . $listFilms[$i]->getNbEntrees() . 
     " - " . $listReali[$i]->getNomRealisateur() . " - " . $listReali[$i]->getPrenomRealisateur() . "\n";
 }
+*/
+foreach ($listFilms as $i => $film) {
+    $realisateur = $listReali[$i];
+    echo "Infos sur le film ==> \n"
+        . $film->getIdFilm() . " - "
+        . $film->getNomFilm() . " - "
+        . $film->getNbEntrees() . " - "
+        . $realisateur->getNomRealisateur() . " - "
+        . $realisateur->getPrenomRealisateur() . "\n";
+}
+
 echo "(7)___________________________________________________________________________________\n";
-for ($i = 0; $i < 3; $i++)
+/**for ($i = 0; $i < 3; $i++)
 {
     echo "Infos sur le film ==> \n" . $listFilms[$i]->getIdFilm() . " - " . $listFilms[$i]->getNomFilm() . " - " . $listFilms[$i]->getNbEntrees() . 
     " - " . $listReali[$i]->getNomRealisateur() . " - " . $listReali[$i]->getPrenomRealisateur() . "\nListe des acteurs==> \n";
@@ -53,5 +71,25 @@ for ($i = 0; $i < 3; $i++)
     echo "\n";
     }
 }
+*/
+foreach ($listFilms as $i => $film) {
+    $realisateur = $listReali[$i];
+
+    echo "Infos sur le film ==> \n"
+        . $film->getIdFilm() . " - "
+        . $film->getNomFilm() . " - "
+        . $film->getNbEntrees() . " - "
+        . $realisateur->getNomRealisateur() . " - "
+        . $realisateur->getPrenomRealisateur() . "\n"
+        . "Liste des acteurs ==> \n";
+
+    foreach ($film->getActeurs() as $acteur) {
+        echo $acteur->getNomActeur() . " - "
+            . $acteur->getPrenomActeur() . " - "
+            . ($acteur->getEstCesaree() ? "true" : "false")
+            . "\n";
+    }
+}
+
     
 
